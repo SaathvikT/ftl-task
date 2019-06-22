@@ -39,10 +39,10 @@ export default function InputSlider() {
   };
 
   const handleBlur = () => {
-    if (value < 0) {
-      setValue(0);
-    } else if (value > 100) {
-      setValue(100);
+    if (value < 500) {
+      setValue(500);
+    } else if (value > 5000) {
+      setValue(5000);
     }
   };
 
@@ -51,7 +51,7 @@ export default function InputSlider() {
   };
 
   const handleTimeInputChange = event => {
-    setTime(event.target.time === '' ? '' : Number(event.target.time));
+    setTime(event.target.value === '' ? '' : Number(event.target.value));
   };
 
   const handleTimeBlur = () => {
@@ -112,7 +112,7 @@ var setOfJson;
       </Grid>
       <Grid container spacing={2} alignItems="center">
         <Grid item>
-        <Typography variant="h6" id="input-slider" gutterBottom>
+        <Typography variant="h6" id="time-slider" gutterBottom>
           Loan Duration
         </Typography>
         </Grid>
