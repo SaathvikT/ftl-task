@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/lab/Slider';
 import Input from '@material-ui/core/Input';
-import axios from 'axios';
+
 
 const useStyles = makeStyles({
   root: {
@@ -69,11 +69,7 @@ var setOfJson;
       var result = await fetch(
         `https://ftl-frontend-test.herokuapp.com/interest?amount=${value}&numMonths=${time}`,
       );
-    //  const json = await result.json();
       const setOfJson = await result.json();
-    //  const string = JSON.stringify(json);
-    //  console.log("Fetched..", string);
-    //  const jsonData = JSON.parse(string);
       setData(setOfJson);
     }
     fetchdata();
